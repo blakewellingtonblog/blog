@@ -1,0 +1,112 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    text-align: left;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: var(--border-outline);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 2fr 100px 120px 240px;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--card-2);
+    font-size: var(--text-sm);
+    color: var(--sub-text);
+    font-weight: 500;
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 2fr 100px 120px 240px;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--card-1);
+    align-items: center;
+}
+
+.titleLink {
+    color: var(--main-text-white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.titleLink:hover {
+    color: var(--brand-highlight);
+}
+
+.colDate {
+    color: var(--sub-text);
+    font-size: var(--text-sm);
+}
+
+.colActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.deleteBtn {
+    background: none;
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--text-sm);
+}
+
+.deleteBtn:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.empty {
+    background-color: var(--card-1);
+    padding: var(--spacing-xxl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.empty p {
+    color: var(--sub-text);
+}
+
+@media (max-width: 768px) {
+    .tableHeader {
+        display: none;
+    }
+
+    .tableRow {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}

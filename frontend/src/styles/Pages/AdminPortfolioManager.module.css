@@ -1,0 +1,97 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    text-align: left;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background-color: var(--card-1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.thumb {
+    height: 180px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videoPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-3);
+    font-size: 36px;
+    color: var(--brand-highlight);
+}
+
+.cardBody {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.cardBody h3 {
+    font-size: var(--text-lg);
+    margin: 0;
+}
+
+.cardMeta {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.cardActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.deleteBtn {
+    background: none;
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--text-sm);
+}
+
+.deleteBtn:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.empty {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    color: var(--sub-text);
+}

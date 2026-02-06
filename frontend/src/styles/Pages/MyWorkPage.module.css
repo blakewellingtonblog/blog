@@ -1,0 +1,251 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    padding: var(--spacing-5) var(--spacing-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.heroTitle {
+    font-size: var(--text-display-sm);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.heroSubtitle {
+    color: var(--sub-text);
+    font-size: var(--text-xl);
+    line-height: var(--line-height-xl);
+}
+
+.loading {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    color: var(--sub-text);
+}
+
+.experienceList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl) var(--spacing-5);
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    background-color: var(--card-1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-outline);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cardImage {
+    width: 280px;
+    min-height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBody {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.cardTitle {
+    font-size: var(--text-xxl);
+    font-weight: 600;
+    margin: 0;
+}
+
+.cardSubtitle {
+    color: var(--sub-text);
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
+    margin: 0;
+}
+
+.empty {
+    text-align: center;
+    padding: var(--spacing-5);
+    color: var(--sub-text);
+}
+
+/* ── Shared Section ── */
+.section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-5) var(--spacing-xl);
+    width: 100%;
+}
+
+.sectionTitle {
+    font-size: var(--text-xxxl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: var(--spacing-lg);
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--brand-highlight);
+    border-radius: 2px;
+}
+
+/* ── Education ── */
+.educationList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.eduCard {
+    background-color: var(--card-1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    border-left: 3px solid var(--brand-highlight);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.eduHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-lg);
+}
+
+.eduSchool {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin: 0;
+    color: var(--main-text-white);
+}
+
+.eduDate {
+    font-size: var(--text-sm);
+    color: var(--sub-text);
+    white-space: nowrap;
+}
+
+.eduProgram {
+    font-size: var(--text-md);
+    color: var(--sub-text);
+    margin: 0;
+    font-style: italic;
+}
+
+.eduDegree {
+    font-size: var(--text-lg);
+    color: var(--main-text-white);
+    margin: 0;
+}
+
+.eduDetail {
+    font-size: var(--text-md);
+    color: var(--sub-text);
+    margin: 0;
+}
+
+/* ── Skills ── */
+.skillsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.skillCategory {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.skillLabel {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--brand-highlight);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skillTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.skillChit {
+    background-color: var(--card-2);
+    color: var(--main-text-white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--text-md);
+    border: 1px solid var(--border-outline);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.skillChit:hover {
+    border-color: var(--brand-highlight);
+    background-color: var(--card-3);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .cardImage {
+        width: 100%;
+        height: 200px;
+    }
+
+    .experienceList {
+        padding: 0 var(--spacing-md) var(--spacing-xl);
+    }
+
+    .section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .eduHeader {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}

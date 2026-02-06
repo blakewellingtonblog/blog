@@ -1,0 +1,125 @@
+.editor {
+    border: 1px solid var(--border-outline);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background-color: var(--card-2);
+    border-bottom: 1px solid var(--border-outline);
+}
+
+.toolbar button {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--sub-text);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.toolbar button:hover {
+    background-color: var(--card-3);
+    color: var(--main-text-white);
+}
+
+.toolbar button.active {
+    background-color: var(--brand-highlight);
+    color: var(--main-text-black);
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--border-outline);
+    margin: 0 var(--spacing-sm);
+}
+
+.content {
+    min-height: 400px;
+    background-color: var(--card-1);
+}
+
+.content :global(.ProseMirror) {
+    padding: var(--spacing-xl);
+    min-height: 400px;
+    color: var(--main-text-white);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    outline: none;
+}
+
+.content :global(.ProseMirror) h2 {
+    font-size: var(--text-xxl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.content :global(.ProseMirror) h3 {
+    font-size: var(--text-xl);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.content :global(.ProseMirror) p {
+    margin-bottom: var(--spacing-md);
+}
+
+.content :global(.ProseMirror) a {
+    color: var(--brand-highlight);
+    text-decoration: underline;
+}
+
+.content :global(.ProseMirror) blockquote {
+    border-left: 3px solid var(--brand-highlight);
+    padding-left: var(--spacing-lg);
+    color: var(--sub-text);
+    margin: var(--spacing-lg) 0;
+}
+
+.content :global(.ProseMirror) img {
+    max-width: 100%;
+    border-radius: var(--radius-sm);
+    margin: var(--spacing-lg) 0;
+}
+
+.content :global(.ProseMirror) code {
+    background-color: var(--card-3);
+    padding: 2px 6px;
+    border-radius: var(--radius-xs);
+    font-size: var(--text-md);
+}
+
+.content :global(.ProseMirror) pre {
+    background-color: var(--card-3);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+}
+
+.content :global(.ProseMirror) pre code {
+    background: none;
+    padding: 0;
+}
+
+.content :global(.ProseMirror) ul,
+.content :global(.ProseMirror) ol {
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.content :global(.ProseMirror) p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: var(--sub-text);
+    pointer-events: none;
+    height: 0;
+}

@@ -1,0 +1,41 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 500px;
+    width: 100%;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--card-2);
+    border: 1px solid var(--border-outline);
+    border-radius: var(--radius-sm);
+    color: var(--main-text-white);
+    font-size: var(--text-lg);
+    font-family: inherit;
+    outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--brand-highlight);
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.success {
+    color: var(--brand-highlight);
+    font-size: var(--text-xl);
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: var(--text-md);
+}

@@ -1,0 +1,144 @@
+/* Import Roboto from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+:root {
+    /* Color Palette */
+    --background: #141416;
+    --brand-highlight: #5be2e6;
+  
+    --card-1: #1b1d20;
+    --card-2: #212428;
+    --card-3: #272A2D;
+    --card-4: #2E3236;
+  
+    --chit-background: rgba(91, 225, 230, 0.45);
+  
+    --card5-var1: #035D73;
+    --card5-var2: #023440;
+    --card5-var3: #2399A6;
+    --card5-var4: #021C26;
+    --card5-var5: #026879;
+  
+    --border-outline: #3f4348;
+  
+    --main-text-white: #ffffff;
+    --main-text-black: #000000;
+    --sub-text: #8a8a8a;
+  
+    /* Spacing */
+    --spacing-xs: 2px;
+    --spacing-sm: 4px;
+    --spacing-md: 8px;
+    --spacing-lg: 16px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 40px;
+    --spacing-xxxl: 48px;
+    --spacing-4: 56px;
+    --spacing-5: 64px;
+    --spacing-6: 128px;
+    --spacing-7: 256px;
+  
+    /* Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --radius-full: 999px;
+  
+    /* Typography */
+    --text-xs: 10px;
+    --text-sm: 12px;
+    --text-md: 14px;
+    --text-lg: 16px;
+    --text-xl: 20px;
+    --text-xxl: 24px;
+    --text-xxxl: 32px;
+    --text-display-sm: 40px;
+    --text-display-md: 48px;
+    --text-display-lg: 56px;
+  
+    /* Line Height */
+    --line-height-xs: 14px;
+    --line-height-sm: 17px;
+    --line-height-md: 20px;
+    --line-height-lg: 22px;
+    --line-height-xl: 28px;
+    --line-height-xxl: 34px;
+    --line-height-xxxl: 45px;
+    --line-height-display-sm: 56px;
+    --line-height-display-md: 67px;
+    --line-height-display-lg: 78px;
+
+    /* Font Family */
+    font-family:"Roboto", sans-serif;
+
+    body {
+      color: var(--main-text-white);
+      background-color: var(--background);
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: var(--button-padding, 8px 22px);
+      width: fit-content;
+      border-radius: var(--radius-s, 10px);
+      background: var(--color-teal-primary, #5BE1E6);
+      color: var(--text-dark, #000B0C);
+      font-size: var(--label-large-size, 14px);
+      font-weight: var(--font-semibold, 500);
+      text-decoration: none;
+      box-shadow: var(
+        --elevation-2,
+        0px 1px 5px 0px rgba(0, 0, 0, 0.12),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+        0px 3px 1px -2px rgba(0, 0, 0, 0.20)
+      );
+    }
+      
+      .button:hover {
+        background-color: #3cd2d8; /* Slightly darker hover */
+      }
+      
+      .button-outline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--button-padding, 8px 22px);
+        width: fit-content;
+        border-radius: var(--radius-sm, 10px);
+        background: transparent;
+        color: var(--brand-highlight);
+        font-size: var(--label-large-size, 14px);
+        font-weight: var(--font-semibold, 500);
+        text-decoration: none;
+        border: 1px solid var(--brand-highlight);
+        box-shadow: var(
+          --elevation-2,
+          0px 1px 5px 0px rgba(0, 0, 0, 0.12),
+          0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+          0px 3px 1px -2px rgba(0, 0, 0, 0.20)
+        );
+        transition: background-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .button-outline:hover {
+        background-color: var(--brand-highlight);
+        color: var(--text-dark, #000B0C);
+      }
+
+      .chit {
+        background-color: var(--chit-background);
+        color: var(--main-text-white);
+        border: 1px solid var(--brand-highlight);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-full);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        display: inline-block;
+        text-align: center;
+        white-space: nowrap;
+      }
+  }

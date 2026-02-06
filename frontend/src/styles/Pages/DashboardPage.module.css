@@ -1,0 +1,35 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+.goalSection{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+.choiceSection{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--card-1);
+    border-radius: var(--radius-lg);
+    gap: var(--spacing-lg);
+}
+.reflectionSection{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-1);
+    border-radius: var(--radius-lg);
+    gap: var(--spacing-md);
+}
+
+.aboutMeSection{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.aboutMeText{
+    font-size: var(--text-xl);
+
+}
