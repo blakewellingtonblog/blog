@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import logo from '../assets/PBlogo.png';
-import styles from '../styles/components/NavBar.module.css';
+import styles from '../styles/Components/NavBar.module.css';
 
 function NavBar() {
     const { isAuthenticated } = useSelector((state) => state.auth);
