@@ -1,6 +1,6 @@
 import React from 'react';
 import instagram from '../assets/instagram.png';
-import linkedIn from '../assets/linkedIn.png';
+import linkedIn from '../assets/linkedin.png';
 import styles from '../styles/Pages/HomePage.module.css';
 
 function SocialSection(){

@@ -10,9 +10,9 @@ import AboutMeSection from '../components/AboutMeSection';
 import SocialSection from '../components/SocialSection';
 import Footer from '../components/Footer';
 import MediaCard from '../components/MediaCard';
-import headShot from '../assets/headShot.png';
+import headShot from '../assets/headshot.png';
 import instagram from '../assets/instagram.png';
-import linkedIn from '../assets/linkedIn.png';
+import linkedIn from '../assets/linkedin.png';
 
 function AnimatedSection({ children, className, delay }) {
     const [ref, isVisible] = useScrollAnimation();

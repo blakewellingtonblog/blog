@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from '../styles/Components/Footer.module.css';
 import logo from '../assets/PBlogo.png';
 import instagram from '../assets/instagram.png';
-import linkedIn from '../assets/linkedIn.png';
+import linkedIn from '../assets/linkedin.png';
 
 function Footer(){
     return(
