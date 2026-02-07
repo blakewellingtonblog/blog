@@ -28,6 +28,13 @@
     margin-left: auto;
 }
 
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
 .menuToggle {
     display: none;
     background: none;
