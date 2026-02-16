@@ -19,6 +19,10 @@ venv
 *.log
 npm-debug.log*
 
+# Large media (hosted on Supabase storage)
+frontend/public/background.mp4
+frontend/public/background_compressed.mp4
+
 # OS files
 .DS_Store
 Thumbs.db

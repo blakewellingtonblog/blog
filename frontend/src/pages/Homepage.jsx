@@ -63,7 +63,7 @@ function Homepage() {
                     loop
                     playsInline
                 >
-                    <source src="/background.mp4" type="video/mp4" />
+                    <source src="https://yycbgliyffwxwvwaxoxo.supabase.co/storage/v1/object/public/portfolio-media/background.mp4" type="video/mp4" />
                 </video>
                 <div className={styles.landingOverlay} />
                 <NavBar />
