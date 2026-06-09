@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchExperiences } from '@shared/redux/slices/workSlice';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import HeroCanvas from '../components/HeroCanvas';
+import { RESUME, PRODUCT_WORK } from '../config/portfolioAssets';
 import styles from '../styles/Pages/MyWorkPage.module.css';
 
 function MyWorkPage() {
@@ -18,10 +20,43 @@ function MyWorkPage() {
         <div className={styles.page}>
             <NavBar />
             <section className={styles.hero}>
-                <h1 className={styles.heroTitle}>Experience</h1>
-                <p className={styles.heroSubtitle}>
-                    A look at the experiences and projects that have shaped my career.
-                </p>
+                <HeroCanvas className={styles.heroCanvas} intensity={70} />
+                <div className={styles.heroVignette} />
+                <div className={styles.heroContent}>
+                    <h1 className={styles.heroTitle}>Experience</h1>
+                    <p className={styles.heroSubtitle}>
+                        A look at the experiences and projects that have shaped my career.
+                    </p>
+                    <div className={styles.heroActions}>
+                        <a className="button" href={RESUME.href} download>Download Résumé ↓</a>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>Product Work</h2>
+                <div className={styles.pwCard}>
+                    <p className={styles.pwLead}>
+                        Applied product work from <strong>10k Athletics</strong> — the sports-tech platform I founded and
+                        lead. The fastest way to evaluate it is to open the live product; the case studies make the
+                        reasoning behind specific decisions legible.
+                    </p>
+                    <div className={styles.pwRow}>
+                        <a className="button-outline" href={PRODUCT_WORK.live.site} target="_blank" rel="noopener noreferrer">Live product ↗</a>
+                        <a className="button-outline" href={PRODUCT_WORK.live.appStore} target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                    </div>
+                    <p className={styles.pwNote}>
+                        Sign-up access code: <span className={styles.pwCode}>{PRODUCT_WORK.live.accessCode}</span>
+                    </p>
+                    <div className={styles.pwDivider} />
+                    <p className={styles.pwGroupLabel}>Downloads</p>
+                    <div className={styles.pwRow}>
+                        <a className="button-outline" href={PRODUCT_WORK.packet.href} download>{PRODUCT_WORK.packet.label} ↓</a>
+                        {PRODUCT_WORK.caseStudies.map((d) => (
+                            <a key={d.href} className="button-outline" href={d.href} download>{d.label} ↓</a>
+                        ))}
+                    </div>
+                </div>
             </section>
 
             {status === 'loading' && (

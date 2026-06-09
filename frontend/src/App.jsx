@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
+import { FEATURES } from './config/features';
 import './App.css';
 
 // Public pages
@@ -26,6 +27,9 @@ import AdminInfluencesList from './pages/AdminInfluencesList';
 import AdminInfluencesEditor from './pages/AdminInfluencesEditor';
 import ProtectedRoute from './components/ProtectedRoute';
 
+// Render the page if its flag is on, otherwise bounce to home.
+const withFlag = (enabled, element) => (enabled ? element : <Navigate to="/" replace />);
+
 function App() {
   return (
     <Router>
@@ -42,12 +46,12 @@ function App() {
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/blog" element={<BlogListPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/portfolio" element={withFlag(FEATURES.CREATIVE_WORK, <PortfolioPage />)} />
+        <Route path="/blog" element={withFlag(FEATURES.BLOG, <BlogListPage />)} />
+        <Route path="/blog/:slug" element={withFlag(FEATURES.BLOG, <BlogPostPage />)} />
         <Route path="/my-work" element={<MyWorkPage />} />
         <Route path="/my-work/:slug" element={<ExperiencePage />} />
-        <Route path="/influences" element={<InfluencesPage />} />
+        <Route path="/influences" element={withFlag(FEATURES.INFLUENCES, <InfluencesPage />)} />
         <Route path="/login" element={<LoginPage />} />
 
         {/* Admin routes */}

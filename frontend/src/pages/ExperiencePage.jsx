@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchExperience, clearCurrent } from '@shared/redux/slices/workSlice';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import BlogCard from '../components/BlogCard';
+import HeroCanvas from '../components/HeroCanvas';
+import { EXPERIENCE_LINKS } from '../config/portfolioAssets';
 import styles from '../styles/Pages/ExperiencePage.module.css';
 
 function ExperiencePage() {
@@ -26,8 +27,7 @@ function ExperiencePage() {
         );
     }
 
-    const timeline = current.timeline || [];
-    const featuredPosts = current.featured_posts || [];
+    const extras = EXPERIENCE_LINKS[slug];
 
     return (
         <div className={styles.page}>
@@ -46,9 +46,15 @@ function ExperiencePage() {
             )}
 
             {!current.header_image_url && (
-                <div className={styles.headerPlain}>
-                    <h1>{current.title}</h1>
-                    {current.subtitle && <p>{current.subtitle}</p>}
+                <div className={styles.headerAnimated}>
+                    <HeroCanvas className={styles.headerCanvas} intensity={70} />
+                    <div className={styles.headerVignette} />
+                    <div className={styles.headerAnimatedContent}>
+                        <h1 className={styles.headerTitle}>{current.title}</h1>
+                        {current.subtitle && (
+                            <p className={styles.headerSubtitle}>{current.subtitle}</p>
+                        )}
+                    </div>
                 </div>
             )}
 
@@ -61,48 +67,22 @@ function ExperiencePage() {
                 </section>
             )}
 
-            {featuredPosts.length > 0 && (
+            {extras && (extras.links?.length > 0 || extras.documents?.length > 0) && (
                 <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Featured Posts</h2>
-                    <div className={styles.postsGrid}>
-                        {featuredPosts.map((post) => (
-                            <BlogCard key={post.id} post={post} />
+                    <h2 className={styles.sectionTitle}>Links &amp; Downloads</h2>
+                    <div className={styles.linkRow}>
+                        {extras.links?.map((l) => (
+                            <a key={l.url} className="button-outline" href={l.url} target="_blank" rel="noopener noreferrer">
+                                {l.label} ↗
+                            </a>
+                        ))}
+                        {extras.documents?.map((d) => (
+                            <a key={d.href} className="button-outline" href={d.href} download>
+                                {d.label} ↓
+                            </a>
                         ))}
                     </div>
-                </section>
-            )}
-
-            {timeline.length > 0 && (
-                <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Timeline</h2>
-                    <div className={styles.timeline}>
-                        {timeline.map((event) => (
-                            <div key={event.id} className={styles.timelineEvent}>
-                                <div className={styles.timelineDateCol}>
-                                    <span className={styles.timelineDate}>
-                                        {new Date(event.event_date).toLocaleDateString('en-US', {
-                                            year: 'numeric',
-                                            month: 'short',
-                                        })}
-                                    </span>
-                                    <div className={styles.timelineDot} />
-                                </div>
-                                <div className={styles.timelineContent}>
-                                    <h3 className={styles.timelineTitle}>{event.title}</h3>
-                                    {event.subtitle && (
-                                        <p className={styles.timelineSubtitle}>{event.subtitle}</p>
-                                    )}
-                                    {event.photo_url && (
-                                        <img
-                                            src={event.photo_url}
-                                            alt={event.title}
-                                            className={styles.timelinePhoto}
-                                        />
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    {extras.note && <p className={styles.linkNote}>{extras.note}</p>}
                 </section>
             )}
 

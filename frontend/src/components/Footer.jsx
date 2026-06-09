@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FEATURES } from '../config/features';
+import { RESUME } from '../config/portfolioAssets';
 import styles from '../styles/Components/Footer.module.css';
 import logo from '../assets/PBlogo.png';
 import instagram from '../assets/instagram.png';
@@ -14,10 +16,11 @@ function Footer(){
                     <span className={styles.name}>Blake Wellington</span>
                 </div>
                 <nav className={styles.nav}>
-                    <Link to="/portfolio" className={styles.link}>Creative Work</Link>
-                    <Link to="/blog" className={styles.link}>Blog</Link>
+                    {FEATURES.CREATIVE_WORK && <Link to="/portfolio" className={styles.link}>Creative Work</Link>}
+                    {FEATURES.BLOG && <Link to="/blog" className={styles.link}>Blog</Link>}
                     <Link to="/my-work" className={styles.link}>Experience</Link>
-                    <Link to="/influences" className={styles.link}>Influences</Link>
+                    {FEATURES.INFLUENCES && <Link to="/influences" className={styles.link}>Influences</Link>}
+                    <a href={RESUME.href} className={styles.link} download>Résumé</a>
                 </nav>
                 <div className={styles.socials}>
                     <a href="https://instagram.com/blake.wello" target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram" /></a>

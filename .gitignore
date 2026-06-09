@@ -23,6 +23,9 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
+# Handoff/export artifacts
+*-handoff.zip
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

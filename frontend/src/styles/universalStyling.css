@@ -1,25 +1,36 @@
-/* Import Roboto from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* Primary typeface — IBM Plex Sans (bundled, variable weight) */
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("../assets/fonts/IBMPlexSans.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+}
 :root {
     /* Color Palette */
     --background: #141416;
     --brand-highlight: #5be2e6;
-  
+    --brand-hover: #3cd2d8;
+
     --card-1: #1b1d20;
     --card-2: #212428;
     --card-3: #272A2D;
     --card-4: #2E3236;
-  
+
     --chit-background: rgba(91, 225, 230, 0.45);
-  
+
     --card5-var1: #035D73;
     --card5-var2: #023440;
     --card5-var3: #2399A6;
     --card5-var4: #021C26;
     --card5-var5: #026879;
-  
+
+    /* Homepage redesign teal accents */
+    --teal-bright: #2399a6;
+    --teal-deep: #035d73;
+    --teal-darkest: #021c26;
+
     --border-outline: #3f4348;
-  
+
     --main-text-white: #ffffff;
     --main-text-black: #000000;
     --sub-text: #8a8a8a;
@@ -68,8 +79,24 @@
     --line-height-display-md: 67px;
     --line-height-display-lg: 78px;
 
+    /* Homepage redesign type scale (--t-*) */
+    --t-xs: 11px;
+    --t-sm: 13px;
+    --t-md: 15px;
+    --t-lg: 17px;
+    --t-xl: 21px;
+    --t-2xl: 26px;
+    --t-3xl: 34px;
+    --t-display-sm: 44px;
+    --t-display-md: 60px;
+    --t-display-lg: 88px;
+    --t-display-xl: 124px;
+
+    /* Elevation */
+    --elevation-2: 0px 1px 5px rgba(0,0,0,.12), 0px 2px 2px rgba(0,0,0,.14), 0px 3px 1px -2px rgba(0,0,0,.20);
+
     /* Font Family */
-    font-family:"Roboto", sans-serif;
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
 
     body {
       color: var(--main-text-white);

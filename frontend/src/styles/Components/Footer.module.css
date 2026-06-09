@@ -1,46 +1,48 @@
 .footer {
-    background-color: var(--card-1);
+    background: var(--card-1);
     border-top: 1px solid var(--border-outline);
-    padding: var(--spacing-xl) 0 0;
+    padding: 48px 0 28px;
 }
 
 .inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 0 var(--spacing-xl);
-    gap: var(--spacing-xl);
+    padding: 0 clamp(20px, 5vw, 48px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: 14px;
 }
 
 .logo {
-    height: 48px;
-    width: 48px;
+    height: 34px;
+    width: auto;
 }
 
 .name {
-    font-size: var(--text-lg);
-    font-weight: 500;
+    font-size: var(--t-lg);
+    font-weight: 600;
+    letter-spacing: .01em;
     color: var(--main-text-white);
 }
 
 .nav {
     display: flex;
-    gap: var(--spacing-xl);
+    gap: 28px;
 }
 
 .link {
-    text-decoration: none;
     color: var(--sub-text);
-    font-size: var(--text-md);
-    transition: color 0.2s;
+    font-size: var(--t-md);
+    text-decoration: none;
+    transition: color .2s ease;
 }
 
 .link:hover {
@@ -49,38 +51,39 @@
 
 .socials {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: 16px;
+}
+
+.socials a {
+    width: 22px;
+    height: 22px;
+    opacity: .6;
+    transition: opacity .2s ease;
+}
+
+.socials a:hover {
+    opacity: 1;
 }
 
 .socials img {
-    height: 24px;
-    width: auto;
-    opacity: 0.6;
-    transition: opacity 0.2s, transform 0.2s;
-}
-
-.socials img:hover {
-    opacity: 1;
-    transform: scale(1.15);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .bottom {
-    text-align: center;
-    padding: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    max-width: 1160px;
+    margin: 32px auto 0;
+    padding: 22px clamp(20px, 5vw, 48px) 0;
     border-top: 1px solid var(--border-outline);
+    text-align: center;
     color: var(--sub-text);
-    font-size: var(--text-sm);
+    font-size: var(--t-sm);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .inner {
         flex-direction: column;
         text-align: center;
-        gap: var(--spacing-lg);
-    }
-
-    .nav {
-        gap: var(--spacing-lg);
     }
 }
