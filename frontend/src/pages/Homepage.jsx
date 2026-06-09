@@ -90,16 +90,13 @@ function About() {
                 <Reveal className={styles.aboutHead}><h2 className={styles.sectionTitle}>About Me</h2></Reveal>
                 <Reveal className={styles.aboutBody} delay={0.1}>
                     <p className={styles.aboutLead}>
-                        I'm a builder, coach, and student of systems — a practitioner of incremental progress and long-term thinking.
+                        I'm a student-athlete at Regis University pursuing a master's degree in applied artificial intelligence, with a passion for building technology that drives athlete development and performance.
                     </p>
                     <p>
-                        I'm most alive at the intersection of sport, work, and craft, where discipline compounds quietly and outcomes lag effort. Coaching was my entry point. It taught me that development isn't motivational, it's structural. Standards matter. Reps matter. Environment matters. The same is true in business, health, and life.
+                        I'm the founder of <Link to="/my-work">10k Athletics</Link>, a platform that delivers individualized development plans for athletes and teams, leveraging an open-source marketplace of training services and digital products. 10k combines my interests in software development, business strategy, and innovation within the sports and tech ecosystem.
                     </p>
                     <p>
-                        I'm currently building <Link to="/my-work">10k Athletics</Link>, a sports-tech platform focused on athlete development as a system rather than a moment. The idea is simple: most people want to improve, but lack structure, feedback, and continuity. My work lives in that gap — designing tools, incentives, and workflows that reward patience, responsibility, and consistency over time.
-                    </p>
-                    <p>
-                        If any of this resonates, we probably have something to talk about.
+                        My long-term goal is to work in the startup space, collaborating with driven teams that use technology to solve real-world problems and create meaningful impact. I'm always looking to connect with founders, engineers, and investors who share a vision for building something great from the ground up.
                     </p>
                 </Reveal>
             </div>
@@ -122,13 +119,6 @@ function VideoBand() {
                 <source src="/background.mp4" type="video/mp4" />
             </video>
             <div className={styles.videobandScrim} />
-            <div className={`${styles.wrap} ${styles.videobandContent}`}>
-                <Reveal>
-                    <span className={styles.eyebrow}>In Motion</span>
-                    <h2 className={styles.videobandTitle}>The work, in motion</h2>
-                    <p className={styles.videobandCopy}>Moments from building, coaching, and the work in between.</p>
-                </Reveal>
-            </div>
         </section>
     );
 }
