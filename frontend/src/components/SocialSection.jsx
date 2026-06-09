@@ -10,7 +10,7 @@ function SocialSection(){
             <p className={styles.tagline}>DM me to connect</p>
             <div className={styles.socialLinks}>
                 <a href="https://instagram.com/blake.wello" target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram" /></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src={linkedIn} alt="LinkedIn" /></a>
+                <a href="https://www.linkedin.com/in/blake-wellington-4140a8117/" target="_blank" rel="noopener noreferrer"><img src={linkedIn} alt="LinkedIn" /></a>
             </div>
             <div className={styles.instagramEmbed}>
                 <behold-widget feed-id="EEKQrF1DtYOHNWxOwhNx"></behold-widget>

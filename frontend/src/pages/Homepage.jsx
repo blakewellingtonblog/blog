@@ -74,7 +74,6 @@ function Hero() {
                     <img className={styles.heroPortrait} src={headShot} alt="Blake Wellington" />
                 </div>
                 <h1 className={styles.heroTitle}>Hi I'm <span className={styles.accent}>Blake Wellington</span></h1>
-                <p className={styles.heroTagline}>Reality is Negotiable</p>
             </div>
             <div className={styles.scrollCue} onClick={() => scrollToId('about')} aria-label="Scroll down">
                 <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" /></svg>
@@ -188,7 +187,7 @@ function Socials() {
                     <p className={styles.socialsSub}>DM me to connect — sport, building, or anything in between.</p>
                     <div className={styles.socialsLinks}>
                         <a href="https://instagram.com/blake.wello" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src={instagram} alt="Instagram" /></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src={linkedIn} alt="LinkedIn" /></a>
+                        <a href="https://www.linkedin.com/in/blake-wellington-4140a8117/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src={linkedIn} alt="LinkedIn" /></a>
                     </div>
                     <div className={styles.instagramEmbed}>
                         <behold-widget feed-id="EEKQrF1DtYOHNWxOwhNx"></behold-widget>
