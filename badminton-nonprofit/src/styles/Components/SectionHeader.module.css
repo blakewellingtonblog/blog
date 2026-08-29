@@ -1,0 +1,18 @@
+.wrap {
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.wrap h2 {
+  max-width: 22ch;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h2,
+.center .lede,
+.center :global(.lede) {
+  margin-left: auto;
+  margin-right: auto;
+}

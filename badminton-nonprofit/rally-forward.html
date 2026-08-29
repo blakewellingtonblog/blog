@@ -1,0 +1,1097 @@
+<title>Rally Forward Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+/* ── Tokens ───────────────────────────────────────────────────────────────
+   Neutrals are pulled toward the court green rather than sitting on pure
+   grey; the ochre is hall-floor wood. Light is the base set. */
+:root {
+  --ground:      #edefe9;
+  --surface:     #fbfbf7;
+  --surface-2:   #e4e8e0;
+  --ink:         #131e1a;
+  --ink-2:       #3e4f48;
+  --muted:       #6f7d76;
+  --line:        #d3d9d0;
+  --line-strong: #b9c2b6;
+  --court:       #0f5c4a;
+  --court-2:     #14806a;
+  --ochre:       #b96d1f;
+  --shadow:      18px 40px -32px rgba(19, 30, 26, .42);
+
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --page: 1180px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --rail: 168px;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:      #0d1512;
+    --surface:     #141f1b;
+    --surface-2:   #1b2823;
+    --ink:         #e7ede8;
+    --ink-2:       #aebdb6;
+    --muted:       #849790;
+    --line:        #24322d;
+    --line-strong: #35473f;
+    --court:       #46c4a2;
+    --court-2:     #5fd8b6;
+    --ochre:       #e0a05a;
+    --shadow:      18px 40px -32px rgba(0, 0, 0, .7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground:      #0d1512;
+  --surface:     #141f1b;
+  --surface-2:   #1b2823;
+  --ink:         #e7ede8;
+  --ink-2:       #aebdb6;
+  --muted:       #849790;
+  --line:        #24322d;
+  --line-strong: #35473f;
+  --court:       #46c4a2;
+  --court-2:     #5fd8b6;
+  --ochre:       #e0a05a;
+  --shadow:      18px 40px -32px rgba(0, 0, 0, .7);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  letter-spacing: -.028em;
+  line-height: 1.06;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; }
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* Court-line rule: the hairline that separates every band, doubled the way a
+   sideline and its tramline run in parallel. */
+.rule {
+  border: 0;
+  height: 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+  padding-top: 3px;
+}
+
+/* Label rail + content column — the sideline/tramline split. */
+.band { padding-block: clamp(56px, 8vw, 104px); }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+@media (min-width: 900px) {
+  .split { grid-template-columns: var(--rail) 1fr; gap: 48px; }
+}
+
+.label {
+  font-family: var(--f-display);
+  font-size: .715rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin: 0;
+  padding-top: .5rem;
+}
+
+.label span {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .09em;
+  margin-top: .4rem;
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────────── */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter: blur(9px);
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 66px;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: -.02em;
+  text-decoration: none;
+}
+
+.logo b { color: var(--court); font-weight: 800; }
+
+.logo i {
+  font-style: normal;
+  font-size: .66rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.masthead nav {
+  display: none;
+  gap: 1.6rem;
+  font-family: var(--f-display);
+  font-size: .87rem;
+  font-weight: 500;
+}
+
+.masthead nav a {
+  text-decoration: none;
+  color: var(--ink-2);
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+}
+
+.masthead nav a:hover { color: var(--ink); border-bottom-color: var(--ochre); }
+
+@media (min-width: 860px) { .masthead nav { display: flex; } }
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--f-display);
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  padding: .68rem 1.35rem;
+  border: 1.5px solid var(--court);
+  background: var(--court);
+  color: var(--surface);
+  transition: transform .16s ease, background .16s ease, color .16s ease;
+}
+
+.btn:hover { background: var(--court-2); border-color: var(--court-2); transform: translateY(-2px); }
+
+.btn--line { background: transparent; color: var(--court); }
+.btn--line:hover { background: color-mix(in srgb, var(--court) 12%, transparent); color: var(--ink); }
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.hero { padding-block: clamp(48px, 8vw, 92px) clamp(44px, 6vw, 76px); }
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(36px, 5vw, 56px);
+  align-items: center;
+}
+
+@media (min-width: 980px) {
+  .hero .wrap { grid-template-columns: 1.08fr .92fr; gap: 64px; }
+}
+
+.kicker {
+  font-family: var(--f-display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: 1.5rem;
+}
+
+.kicker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6.4vw, 4.35rem);
+  font-weight: 800;
+  letter-spacing: -.042em;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--court);
+  /* underline sits like a court baseline beneath the emphasized word */
+  box-shadow: inset 0 -.14em 0 color-mix(in srgb, var(--ochre) 55%, transparent);
+}
+
+.hero p.dek {
+  font-size: clamp(1.06rem, 1.7vw, 1.22rem);
+  color: var(--ink-2);
+  max-width: 46ch;
+  margin-top: 1.5rem;
+}
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2.1rem;
+}
+
+/* Court diagram — drawn to regulation proportion (13.4m × 6.1m). */
+.courtfig { position: relative; }
+
+.courtfig svg { width: 100%; height: auto; display: block; }
+
+.court-out  { fill: color-mix(in srgb, var(--court) 12%, var(--surface)); stroke: var(--line-strong); stroke-width: 3; }
+.court-line { stroke: var(--court); stroke-width: 3; fill: none; opacity: .58; }
+.court-net  { stroke: var(--ink); stroke-width: 3; stroke-dasharray: 7 6; opacity: .5; }
+.court-fill { fill: color-mix(in srgb, var(--court) 20%, transparent); }
+
+.courtfig figcaption {
+  font-family: var(--f-display);
+  font-size: .715rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: .6rem;
+}
+
+/* ── Figures band ─────────────────────────────────────────────────────── */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line);
+}
+
+@media (min-width: 860px) { .figures { grid-template-columns: repeat(4, 1fr); } }
+
+.fig {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 1.4rem 1.6rem;
+}
+
+.fig b {
+  display: block;
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1;
+  color: var(--court);
+  font-variant-numeric: tabular-nums;
+}
+
+.fig span {
+  display: block;
+  margin-top: .55rem;
+  font-size: .95rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+/* ── Prose ────────────────────────────────────────────────────────────── */
+.prose { max-width: 66ch; }
+.prose p + p { margin-top: 1.05rem; }
+.prose p { color: var(--ink-2); }
+
+.prose .opener {
+  font-family: var(--f-display);
+  font-size: clamp(1.35rem, 2.7vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.24;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+  text-wrap: balance;
+}
+
+/* ── Programs ─────────────────────────────────────────────────────────── */
+.programs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 820px) { .programs { grid-template-columns: 1fr 1fr; } }
+
+.prog {
+  background: var(--surface);
+  padding: clamp(24px, 3vw, 34px);
+  transition: background .18s ease;
+}
+
+.prog:hover { background: var(--surface-2); }
+
+.prog h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  margin-bottom: .55rem;
+}
+
+.prog .who {
+  font-family: var(--f-display);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  display: block;
+  margin-bottom: .9rem;
+}
+
+.prog p { color: var(--ink-2); font-size: .99rem; }
+
+.prog ul {
+  list-style: none;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+
+.prog li {
+  font-family: var(--f-display);
+  font-size: .87rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  padding-left: 1.15rem;
+  position: relative;
+  line-height: 1.45;
+}
+
+/* shuttle-tick marker */
+.prog li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .52em;
+  width: 6px;
+  height: 6px;
+  background: var(--court);
+}
+
+/* ── Leadership ───────────────────────────────────────────────────────── */
+.chair {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: clamp(26px, 4vw, 44px);
+  display: grid;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+@media (min-width: 900px) { .chair { grid-template-columns: 1fr 1.55fr; } }
+
+.chair .who h3 {
+  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -.038em;
+}
+
+.chair .role {
+  font-family: var(--f-display);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--court);
+  margin-top: .6rem;
+}
+
+.chair .who p.sub {
+  color: var(--muted);
+  font-size: .95rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.chair .bio p { color: var(--ink-2); }
+.chair .bio p + p { margin-top: 1rem; }
+
+/* A résumé read as a record, so the years carry real ordering information. */
+.record {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 1.3rem 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: .1rem;
+}
+
+.record li {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: .6rem 0;
+  border-bottom: 1px dotted var(--line);
+  font-family: var(--f-display);
+  font-size: .91rem;
+}
+
+.record li:last-child { border-bottom: 0; }
+
+.record time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ochre);
+  font-size: .82rem;
+  letter-spacing: .04em;
+}
+
+.record span { color: var(--ink-2); font-weight: 500; line-height: 1.4; }
+
+/* ── Commitments ──────────────────────────────────────────────────────── */
+.commits { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+@media (min-width: 780px) { .commits { grid-template-columns: 1fr 1fr; gap: 2rem 3rem; } }
+
+.commit h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  padding-bottom: .6rem;
+  border-bottom: 2px solid var(--court);
+  display: inline-block;
+  margin-bottom: .75rem;
+}
+
+.commit p { color: var(--ink-2); font-size: .99rem; }
+
+/* ── Give ─────────────────────────────────────────────────────────────── */
+.give { background: var(--ink); color: var(--ground); }
+
+:root[data-theme="dark"] .give,
+:root:not([data-theme="light"]) .give {
+  border-top: 1px solid var(--line);
+}
+
+.give h2 { color: var(--surface); }
+.give .label { color: var(--ochre); }
+.give .label span { color: color-mix(in srgb, var(--surface) 55%, transparent); }
+
+.give .dek {
+  color: color-mix(in srgb, var(--surface) 76%, transparent);
+  max-width: 56ch;
+  margin-top: 1.15rem;
+}
+
+.ways {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  margin-top: 2.6rem;
+  background: color-mix(in srgb, var(--surface) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--surface) 18%, transparent);
+}
+
+@media (min-width: 720px) { .ways { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .ways { grid-template-columns: repeat(4, 1fr); } }
+
+.way {
+  background: var(--ink);
+  padding: 1.5rem 1.4rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.way h3 {
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--surface);
+}
+
+.way p {
+  font-size: .94rem;
+  color: color-mix(in srgb, var(--surface) 68%, transparent);
+  flex: 1;
+}
+
+.way a {
+  font-family: var(--f-display);
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--ochre);
+  text-decoration: none;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ochre) 45%, transparent);
+  align-self: flex-start;
+  padding-bottom: 1px;
+}
+
+.way a:hover { border-bottom-color: var(--ochre); }
+
+/* ── FAQ ──────────────────────────────────────────────────────────────── */
+.faq { border-top: 1px solid var(--line-strong); }
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 1.15rem 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-display);
+  font-size: 1.04rem;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--court);
+  flex-shrink: 0;
+}
+
+.faq details[open] summary::after { content: "\2212"; }
+
+.faq details p {
+  color: var(--ink-2);
+  margin-top: .85rem;
+  max-width: 72ch;
+  font-size: .99rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+footer { background: var(--ground); border-top: 1px solid var(--line-strong); }
+
+.footgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-block: clamp(40px, 5vw, 60px) 2rem;
+}
+
+@media (min-width: 820px) { .footgrid { grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; } }
+
+.footgrid h4 {
+  font-size: .71rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .9rem;
+}
+
+.footgrid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+
+.footgrid li, .footgrid p { font-size: .95rem; color: var(--ink-2); }
+
+.footgrid a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.footgrid a:hover { color: var(--court); border-bottom-color: var(--court); }
+
+.legal {
+  border-top: 1px solid var(--line);
+  padding-block: 1.5rem 2.5rem;
+  font-size: .82rem;
+  color: var(--muted);
+  display: grid;
+  gap: .7rem;
+}
+
+.legal p { max-width: 92ch; font-size: .82rem; color: var(--muted); }
+
+/* Placeholder values that must be replaced before this page goes live. */
+.tbd {
+  font-family: var(--f-display);
+  font-size: .78em;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--ochre);
+  border: 1px dashed color-mix(in srgb, var(--ochre) 55%, transparent);
+  padding: .05em .45em;
+  white-space: nowrap;
+}
+
+:focus-visible { outline: 2.5px solid var(--ochre); outline-offset: 3px; }
+
+/* Entrance: one orchestrated settle on load, nothing scattered after it. */
+@keyframes settle {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero .col-a > *, .hero .courtfig { animation: settle .62s cubic-bezier(.22, .68, .3, 1) backwards; }
+.hero .col-a > *:nth-child(1) { animation-delay: .04s; }
+.hero .col-a > *:nth-child(2) { animation-delay: .1s; }
+.hero .col-a > *:nth-child(3) { animation-delay: .17s; }
+.hero .col-a > *:nth-child(4) { animation-delay: .24s; }
+.hero .courtfig { animation-delay: .16s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+html { scroll-behavior: smooth; }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <b>Rally Forward</b><i>Foundation</i>
+    </a>
+    <nav>
+      <a href="#gap">The gap</a>
+      <a href="#programs">Programs</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#give">Give</a>
+    </nav>
+    <a class="btn" href="#give">Donate</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="col-a">
+        <p class="kicker">501(c)(3) nonprofit &middot; United States</p>
+        <h1>Badminton and para-badminton for <em>every</em> American.</h1>
+        <p class="dek">
+          We fund the coaches, courts, and equipment that put a racket in the hands of
+          people who would never otherwise hold one — and we cover the costs that quietly
+          end elite careers before they start.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#give">Donate</a>
+          <a class="btn btn--line" href="#programs">See what we fund</a>
+        </div>
+      </div>
+
+      <figure class="courtfig">
+        <!-- Regulation doubles court, 13.4m × 6.1m, drawn to scale. -->
+        <svg viewBox="-24 -24 658 1388" role="img" aria-labelledby="courtTitle">
+          <title id="courtTitle">A regulation badminton court seen from above, marked to scale</title>
+          <rect class="court-out" x="0" y="0" width="610" height="1340"></rect>
+          <!-- service courts nearest the viewer, tinted -->
+          <rect class="court-fill" x="46" y="868" width="259" height="396"></rect>
+          <g class="court-line">
+            <!-- singles sidelines -->
+            <path d="M46 0V1340M564 0V1340"></path>
+            <!-- doubles long service lines -->
+            <path d="M0 76H610M0 1264H610"></path>
+            <!-- short service lines -->
+            <path d="M0 472H610M0 868H610"></path>
+            <!-- centre lines, service courts only -->
+            <path d="M305 0V472M305 868V1340"></path>
+          </g>
+          <path class="court-net" d="M-24 670H634"></path>
+        </svg>
+        <figcaption>
+          <span>Doubles court &middot; 13.4 &times; 6.1 m</span>
+          <span>Net at 1.55 m</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="figures">
+        <div class="fig">
+          <b>2</b>
+          <span>Badminton ranks among the most-played sports on earth — and near the bottom of American school sport funding.</span>
+        </div>
+        <div class="fig">
+          <b>2020</b>
+          <span>Para-badminton made its Paralympic debut in Tokyo. The talent was already here; the funding was not.</span>
+        </div>
+        <div class="fig">
+          <b>6</b>
+          <span>Weeks in a program cycle. Participants graduate into the next one rather than finish and disappear.</span>
+        </div>
+        <div class="fig">
+          <b>4</b>
+          <span>Funding tracks, each aimed at a point where cost — not ability — is what stops someone playing.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="band" id="gap">
+    <div class="wrap split">
+      <p class="label">The gap<span>Why we exist</span></p>
+      <div class="prose">
+        <p class="opener">
+          American badminton does not have a talent problem. It has an invoice problem.
+        </p>
+        <p>
+          Players who reach the national level here usually get there by self-funding.
+          They pay their own way to the international tournaments where world ranking is
+          actually earned, buy their own equipment, and find coaching wherever it happens
+          to exist. Para-badminton athletes carry all of that plus the cost of adaptive
+          equipment and the travel required for classification.
+        </p>
+        <p>
+          Those costs are not dramatic. They are entry fees, airfare, a sport wheelchair,
+          a coach on a Tuesday night, a net in a school gym. They are also, reliably, the
+          reason a promising player stops. The foundation exists to absorb them directly.
+        </p>
+        <p>
+          We do not run leagues and we do not sanction competition — that is the governing
+          body's job, and we are not it. We write grants, buy equipment, and pay for
+          coaching hours and travel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="band" id="programs">
+    <div class="wrap split">
+      <p class="label">Programs<span>Where money goes</span></p>
+      <div>
+        <div class="programs">
+
+          <article class="prog">
+            <span class="who">For elite para athletes</span>
+            <h3>Para-Badminton Pathway</h3>
+            <p>
+              We cover the costs that quietly end para-badminton careers before they start.
+              Grants follow the athlete rather than the club, so support travels with them
+              as they move up.
+            </p>
+            <ul>
+              <li>Sport wheelchairs and adaptive racket equipment</li>
+              <li>Travel and entry fees for classification and ranking events</li>
+              <li>Coaching stipends for para-specific technical work</li>
+              <li>Mentorship with current and former national team athletes</li>
+            </ul>
+          </article>
+
+          <article class="prog">
+            <span class="who">For veterans &amp; service members</span>
+            <h3>Adaptive Court Sports</h3>
+            <p>
+              Free, instructor-led badminton for service members and veterans recovering
+              from injury, delivered on site with VA medical centers and military
+              installations. The court is the point: low impact, high focus, and a room
+              full of people who understand the recovery.
+            </p>
+            <ul>
+              <li>Six-week instructional cycles, no equipment required</li>
+              <li>Adaptive coaching for seated and standing sport classes</li>
+              <li>Built for PTS, TBI, amputation, and spinal-cord injury</li>
+              <li>A direct route into competitive para-badminton for those who want it</li>
+            </ul>
+          </article>
+
+          <article class="prog">
+            <span class="who">For schools &amp; community centers</span>
+            <h3>Youth Access Initiative</h3>
+            <p>
+              Nets, rackets, and trained instructors placed into Title&nbsp;I schools and
+              after-school programs at no cost to the site. Every school keeps its
+              equipment permanently — a program that ends when the van pulls away was
+              never a program.
+            </p>
+            <ul>
+              <li>Permanent equipment grants: nets, posts, rackets, shuttles</li>
+              <li>Instructor training for teachers and program staff</li>
+              <li>Curriculum written for gyms with no badminton background</li>
+              <li>Club placement for players who want to keep competing</li>
+            </ul>
+          </article>
+
+          <article class="prog">
+            <span class="who">For coaches &amp; officials</span>
+            <h3>Coach &amp; Official Development</h3>
+            <p>
+              A sport grows at exactly the speed it can train the adults who run it.
+              Certification is expensive and travel-heavy, which is precisely why the map
+              of American badminton coaching has such large holes in it.
+            </p>
+            <ul>
+              <li>Certification scholarships for coaches and technical officials</li>
+              <li>Priority for adaptive and para-badminton credentials</li>
+              <li>Regional clinics in underserved states</li>
+              <li>Continuing education for already-certified coaches</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="band" id="leadership">
+    <div class="wrap split">
+      <p class="label">Leadership<span>Who is accountable</span></p>
+      <div>
+        <div class="chair">
+          <div class="who">
+            <h3>Steve Kearney</h3>
+            <p class="role">Founding Board Chair</p>
+            <p class="sub">
+              Three decades inside American badminton — as a nationally ranked doubles and
+              mixed-doubles player, as President of USA Badminton, and across twelve years
+              on its Board of Directors.
+            </p>
+          </div>
+
+          <div class="bio">
+            <p>
+              Kearney managed the sport of badminton for the 1996 Olympic Games and served
+              as team leader at the 2000 Olympic Games in Sydney and the 2003 Pan American
+              Games. He called the sport for NBC as a color commentator at the Beijing and
+              London Olympic Games, has served on the board of the United States Olympic
+              Committee, and has worked with the National Senior Games Association since
+              1999.
+            </p>
+            <p>
+              He led USA Badminton's para-badminton program into the sport's Paralympic
+              debut — the work this foundation was built to fund at scale.
+            </p>
+
+            <ul class="record">
+              <li><time>1996</time><span>Sport Manager, Badminton — Olympic Games</span></li>
+              <li><time>1999&ndash;</time><span>USA Badminton event manager; advisor, National Senior Games Association</span></li>
+              <li><time>2000</time><span>Team Leader — Olympic Games, Sydney</span></li>
+              <li><time>2003</time><span>Team Leader — Pan American Games</span></li>
+              <li><time>2008 &amp; 2012</time><span>Color commentator, NBC — Beijing and London Olympic Games</span></li>
+              <li><time>12 yrs</time><span>Board of Directors, USA Badminton; past President</span></li>
+              <li><time>2020</time><span>Para-badminton leadership through the sport's Paralympic debut</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="rule"></div>
+
+  <section class="band">
+    <div class="wrap split">
+      <p class="label">Commitments<span>How we work</span></p>
+      <div class="commits">
+        <div class="commit">
+          <h3>The athlete, not the overhead</h3>
+          <p>
+            Grants follow people. We would rather fund one athlete completely than fund
+            twenty partially and watch all of them stall in the same place.
+          </p>
+        </div>
+        <div class="commit">
+          <h3>Adaptive is not a side program</h3>
+          <p>
+            Para-badminton and adaptive court sports sit at the center of what we fund,
+            with the same standards and the same ambition as every other pathway.
+          </p>
+        </div>
+        <div class="commit">
+          <h3>Leave the equipment behind</h3>
+          <p>
+            Every school and center we work with keeps its nets and rackets permanently,
+            so the program outlives the grant that started it.
+          </p>
+        </div>
+        <div class="commit">
+          <h3>Say what the money did</h3>
+          <p>
+            We publish what we raised, what we granted, and what happened next — including
+            the parts that did not work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band give" id="give">
+    <div class="wrap split">
+      <p class="label">Give<span>Four useful things</span></p>
+      <div>
+        <h2 style="font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 800; letter-spacing: -.04em;">
+          A racket costs less than you think. A career costs more.
+        </h2>
+        <p class="dek">
+          Restricted gifts are welcome and encouraged. Name the program you want your
+          donation to fund and it will not be spent anywhere else.
+        </p>
+
+        <div class="ways">
+          <div class="way">
+            <h3>Give once</h3>
+            <p>A single gift, put straight to work in the current grant cycle.</p>
+            <a href="#give">Donate &rarr;</a>
+          </div>
+          <div class="way">
+            <h3>Give monthly</h3>
+            <p>Recurring support lets us commit to an athlete for a full season instead of a single tournament.</p>
+            <a href="#give">Become a sustainer &rarr;</a>
+          </div>
+          <div class="way">
+            <h3>Sponsor a program</h3>
+            <p>Underwrite a six-week veterans cycle, a school equipment grant, or an athlete's international season.</p>
+            <a href="#contact">Talk to us &rarr;</a>
+          </div>
+          <div class="way">
+            <h3>Volunteer</h3>
+            <p>Coaches, stringers, drivers, and event staff — clinics do not run without them.</p>
+            <a href="#contact">Sign up &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap split">
+      <p class="label">Questions<span>Before you give</span></p>
+      <div class="faq">
+        <details open>
+          <summary>Are you USA Badminton?</summary>
+          <p>
+            No. Rally Forward Foundation is an independent 501(c)(3) nonprofit. USA
+            Badminton is the sport's national governing body; we are a separate charitable
+            organization whose grants support athletes, clubs, and programs across the
+            American badminton community.
+          </p>
+        </details>
+        <details>
+          <summary>Is my donation tax-deductible?</summary>
+          <p>
+            Gifts are tax-deductible to the fullest extent allowed by law once our
+            501(c)(3) determination is on file. Our EIN appears in the footer of this page.
+          </p>
+        </details>
+        <details>
+          <summary>How do I apply for a grant?</summary>
+          <p>
+            Athlete and program applications open each cycle. Write to us and say which
+            program you are applying to; we will send the current application and
+            deadlines.
+          </p>
+        </details>
+        <details>
+          <summary>Do you fund clubs, or only individuals?</summary>
+          <p>
+            Both. Individual athlete grants follow the athlete. Program grants go to
+            schools, clubs, VA centers, and community organizations running open-access
+            sessions.
+          </p>
+        </details>
+        <details>
+          <summary>Where can I see your financials?</summary>
+          <p>
+            Annual reports and the filed Form 990 are posted publicly as they are
+            completed. If something you want is not there yet, ask and we will send it.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footgrid">
+    <div>
+      <a class="logo" href="#top"><b>Rally Forward</b><i>Foundation</i></a>
+      <p style="margin-top: 1rem; max-width: 38ch;">
+        Funding athlete pathways, adaptive programs for veterans, and free youth access to
+        badminton across the United States.
+      </p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#give">Ways to give</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><span class="tbd">Add email address</span></li>
+        <li><span class="tbd">Add phone number</span></li>
+        <li><span class="tbd">Add mailing address</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap legal">
+    <p>
+      &copy; 2026 Rally Forward Foundation. 501(c)(3) nonprofit organization.
+      EIN <span class="tbd">Add EIN</span>.
+    </p>
+    <p>
+      Rally Forward Foundation is an independent 501(c)(3) nonprofit. It is not a national
+      governing body and is not affiliated with or endorsed by USA Badminton, the United
+      States Olympic &amp; Paralympic Committee, or the Badminton World Federation.
+      Biographical details are drawn from public sources.
+    </p>
+  </div>
+</footer>

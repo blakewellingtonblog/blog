@@ -1,0 +1,67 @@
+.programGrid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.gridCta {
+  margin-top: 2rem;
+}
+
+.split {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.values {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.value h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.value p {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.leaderAside {
+  position: sticky;
+  top: 100px;
+}
+
+.asideLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.94rem;
+}
+
+@media (min-width: 700px) {
+  .programGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .split {
+    grid-template-columns: 1.35fr 1fr;
+  }
+  .values {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1180px) {
+  .values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

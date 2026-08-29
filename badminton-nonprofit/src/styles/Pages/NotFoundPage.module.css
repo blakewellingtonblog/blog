@@ -1,0 +1,25 @@
+.wrap {
+  padding: clamp(80px, 14vw, 160px) 0;
+  text-align: center;
+}
+
+.mark {
+  color: var(--brand-wash);
+  display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.wrap h1 {
+  margin-bottom: 0.5rem;
+}
+
+.wrap :global(.lede) {
+  margin: 0 auto 2rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+}
