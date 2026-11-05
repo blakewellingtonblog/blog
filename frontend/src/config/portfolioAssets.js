@@ -7,14 +7,14 @@ export const RESUME = {
     href: '/documents/Blake-Wellington-Resume.pdf',
 };
 
-// 10k Athletics live product + downloadable product work (centerpiece of the APM pitch).
+// 10k Athletics live product + downloadable case studies (the "Selected Work" card on /my-work).
 export const PRODUCT_WORK = {
     live: {
         site: 'https://10kathletics.com/',
         appStore: 'https://apps.apple.com/us/app/10k-athletics/id6751750374',
         accessCode: 'TEST',
     },
-    packet: { label: 'Product Work — full packet', href: '/documents/Blake-Wellington-Product-Work.pdf' },
+    packet: { label: 'Case studies — full packet', href: '/documents/Blake-Wellington-Product-Work.pdf' },
     caseStudies: [
         { label: 'Marketplace Payment Spec', href: '/documents/Marketplace-Payment-Spec.pdf' },
         { label: 'Activation Problem', href: '/documents/Activation-Problem.pdf' },

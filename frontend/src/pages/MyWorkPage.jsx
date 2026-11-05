@@ -25,36 +25,10 @@ function MyWorkPage() {
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>Experience</h1>
                     <p className={styles.heroSubtitle}>
-                        A look at the experiences and projects that have shaped my career.
+                        The roles, projects, and education that have shaped my work, from finance and analysis to building and coaching.
                     </p>
                     <div className={styles.heroActions}>
                         <a className="button" href={RESUME.href} download>Download Résumé ↓</a>
-                    </div>
-                </div>
-            </section>
-
-            <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>Product Work</h2>
-                <div className={styles.pwCard}>
-                    <p className={styles.pwLead}>
-                        Applied product work from <strong>10k Athletics</strong> — the sports-tech platform I founded and
-                        lead. The fastest way to evaluate it is to open the live product; the case studies make the
-                        reasoning behind specific decisions legible.
-                    </p>
-                    <div className={styles.pwRow}>
-                        <a className="button-outline" href={PRODUCT_WORK.live.site} target="_blank" rel="noopener noreferrer">Live product ↗</a>
-                        <a className="button-outline" href={PRODUCT_WORK.live.appStore} target="_blank" rel="noopener noreferrer">App Store ↗</a>
-                    </div>
-                    <p className={styles.pwNote}>
-                        Sign-up access code: <span className={styles.pwCode}>{PRODUCT_WORK.live.accessCode}</span>
-                    </p>
-                    <div className={styles.pwDivider} />
-                    <p className={styles.pwGroupLabel}>Downloads</p>
-                    <div className={styles.pwRow}>
-                        <a className="button-outline" href={PRODUCT_WORK.packet.href} download>{PRODUCT_WORK.packet.label} ↓</a>
-                        {PRODUCT_WORK.caseStudies.map((d) => (
-                            <a key={d.href} className="button-outline" href={d.href} download>{d.label} ↓</a>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -92,6 +66,33 @@ function MyWorkPage() {
             )}
 
             <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>Selected Work</h2>
+                <div className={styles.pwCard}>
+                    <p className={styles.pwLead}>
+                        Applied work from <strong>10k Athletics</strong>, the sports-tech platform I founded. The live
+                        product is the fastest way to see it. The case studies show the reasoning behind specific
+                        decisions: a build-vs-buy analysis of marketplace payment infrastructure, a data-driven diagnosis
+                        of a zero-activation launch, and a feature-scoping call with real engineering tradeoffs.
+                    </p>
+                    <div className={styles.pwRow}>
+                        <a className="button-outline" href={PRODUCT_WORK.live.site} target="_blank" rel="noopener noreferrer">Live product ↗</a>
+                        <a className="button-outline" href={PRODUCT_WORK.live.appStore} target="_blank" rel="noopener noreferrer">App Store ↗</a>
+                    </div>
+                    <p className={styles.pwNote}>
+                        Sign-up access code: <span className={styles.pwCode}>{PRODUCT_WORK.live.accessCode}</span>
+                    </p>
+                    <div className={styles.pwDivider} />
+                    <p className={styles.pwGroupLabel}>Downloads</p>
+                    <div className={styles.pwRow}>
+                        <a className="button-outline" href={PRODUCT_WORK.packet.href} download>{PRODUCT_WORK.packet.label} ↓</a>
+                        {PRODUCT_WORK.caseStudies.map((d) => (
+                            <a key={d.href} className="button-outline" href={d.href} download>{d.label} ↓</a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>Education</h2>
                 <div className={styles.educationList}>
                     <div className={styles.eduCard}>
@@ -118,9 +119,17 @@ function MyWorkPage() {
                 <h2 className={styles.sectionTitle}>Skills</h2>
                 <div className={styles.skillsGroup}>
                     <div className={styles.skillCategory}>
+                        <h4 className={styles.skillLabel}>Finance &amp; Analysis</h4>
+                        <div className={styles.skillTags}>
+                            {['Financial Modeling', 'Financial Statement Analysis', 'Budgeting & Forecasting', 'Capital Allocation', 'Valuation Fundamentals', 'Variance Analysis', 'KPI Definition & Tracking', 'Market Research', 'Data Analysis', 'Business Reporting', 'Stakeholder Communication', 'Excel', 'SQL/PostgreSQL', 'Python'].map(s => (
+                                <span key={s} className={styles.skillChit}>{s}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Product</h4>
                         <div className={styles.skillTags}>
-                            {['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Feature Prioritization', 'Roadmapping', 'Agile/Scrum', 'Go-to-Market Strategy', 'KPI Definition', 'A/B Testing', 'Market Research', 'Financial Modeling'].map(s => (
+                            {['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Feature Prioritization', 'Roadmapping', 'Agile/Scrum', 'Go-to-Market Strategy', 'A/B Testing'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
@@ -128,7 +137,7 @@ function MyWorkPage() {
                     <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Technical</h4>
                         <div className={styles.skillTags}>
-                            {['React', 'React Native', 'JavaScript', 'TypeScript', 'Python', 'FastAPI', 'Java', 'C', 'C++', 'SQL/PostgreSQL', 'REST APIs', 'HTML/CSS', 'Authentication'].map(s => (
+                            {['React', 'React Native', 'JavaScript', 'TypeScript', 'FastAPI', 'Java', 'C', 'C++', 'REST APIs', 'HTML/CSS', 'Authentication'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
@@ -136,7 +145,7 @@ function MyWorkPage() {
                     <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Tools</h4>
                         <div className={styles.skillTags}>
-                            {['Supabase', 'Figma', 'Notion', 'GitHub', 'GitLab', 'Jira', 'Excel'].map(s => (
+                            {['Posthog', 'Supabase', 'Figma', 'Notion', 'GitHub', 'GitLab', 'Jira'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
