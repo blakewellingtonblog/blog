@@ -13,16 +13,22 @@ import linkedIn from '../assets/linkedin.png';
 // ---- Experience teaser content (curated summary; full list lives on /my-work) ----
 const ROLES = [
     {
-        period: 'Current',
-        title: 'Founder & Builder',
+        period: 'Dec 2022 – Present',
+        title: 'Founder & Product Lead',
         org: '10k Athletics',
-        desc: 'Building a sports-tech platform around the Individual Development Plan — turning athlete development into a structured system of evaluation, goals, and reflection.',
+        desc: 'Founded and run a sports-tech platform built around individual development plans. Secured $45K in funding, allocated the budget across design, engineering, and go-to-market, defined the KPIs we measured against, and shipped through a 50-user beta.',
     },
     {
-        period: 'Ongoing',
-        title: 'Coach',
-        org: 'Soccer / Athletics Development',
-        desc: 'Coaching as a practice in structure over hype: standards, reps, and environment as the real drivers of long-term development.',
+        period: 'Dec 2023 – Dec 2024',
+        title: 'Website Manager & Systems Lead',
+        org: 'The Farm FC',
+        desc: 'Built the organization\'s website and the systems behind it: CRM workflows, cleaner customer data, and internal order tracking that gave staff operational visibility they didn\'t have before.',
+    },
+    {
+        period: 'Feb 2025 – Present',
+        title: 'Soccer Coach',
+        org: 'Kent Denver School',
+        desc: 'Head and assistant coach across program levels. Training plans built from player performance data, individualized feedback, and a bias toward structure over hype.',
     },
 ];
 
@@ -32,8 +38,9 @@ const EDU = [
 ];
 
 const SKILLS = {
-    Product: ['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Roadmapping', 'Go-to-Market', 'KPI Definition', 'A/B Testing'],
-    Technical: ['React', 'React Native', 'TypeScript', 'Python', 'FastAPI', 'SQL / PostgreSQL', 'REST APIs', 'Auth'],
+    'Finance & Analysis': ['Financial Modeling', 'Excel', 'Budget Allocation', 'KPI Definition', 'Market Research', 'A/B Testing', 'SQL / PostgreSQL', 'Python'],
+    Product: ['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Roadmapping', 'Go-to-Market'],
+    Technical: ['React', 'React Native', 'TypeScript', 'FastAPI', 'REST APIs', 'Auth'],
     Tools: ['Supabase', 'Figma', 'Notion', 'GitHub', 'Jira'],
 };
 
@@ -89,13 +96,13 @@ function About() {
                 <Reveal className={styles.aboutHead}><h2 className={styles.sectionTitle}>About Me</h2></Reveal>
                 <Reveal className={styles.aboutBody} delay={0.1}>
                     <p className={styles.aboutLead}>
-                        I'm a student-athlete at Regis University pursuing a master's degree in applied artificial intelligence, with a passion for building technology that drives athlete development and performance.
+                        I'm a student-athlete at Regis University with a B.S. in Finance and a minor in Computer Science, now pursuing a master's degree in applied artificial intelligence. I'm drawn to work where careful analysis and real execution meet.
                     </p>
                     <p>
-                        I'm the founder of <Link to="/my-work">10k Athletics</Link>, a platform that delivers individualized development plans for athletes and teams, leveraging an open-source marketplace of training services and digital products. 10k combines my interests in software development, business strategy, and innovation within the sports and tech ecosystem.
+                        For the past three years I've been the founder of <Link to="/my-work">10k Athletics</Link>, a platform that delivers individualized development plans for athletes and teams. Running it has meant owning the numbers as much as the product: securing $45K in funding and allocating it across design, engineering, and go-to-market, defining the KPIs we measured ourselves against, and turning user research into decisions about what to build and what to cut.
                     </p>
                     <p>
-                        My long-term goal is to work in the startup space, collaborating with driven teams that use technology to solve real-world problems and create meaningful impact. I'm always looking to connect with founders, engineers, and investors who share a vision for building something great from the ground up.
+                        I'm open about what comes next. That could be a financial analyst or FP&amp;A role where I can put my finance training and modeling skills to work, an analytics or operations seat, or a product team at an early-stage company. What matters most to me is working with people who take the problem seriously and want to get a little better at it every week.
                     </p>
                 </Reveal>
             </div>
@@ -128,9 +135,9 @@ function ExperienceTeaser() {
             <div className={styles.wrap}>
                 <Reveal className={styles.expHead}>
                     <div className={styles.expIntro}>
-                        <span className={styles.eyebrow}>What I'm building</span>
+                        <span className={styles.eyebrow}>Background</span>
                         <h2 className={styles.sectionTitle} style={{ marginTop: 14 }}>Experience</h2>
-                        <p>The experiences and projects that have shaped my work — sport, coaching, and systems, treated as parts of the same craft.</p>
+                        <p>Finance training, three years of running a company, and years of coaching. Different settings, same discipline: set clear standards, measure honestly, and improve a little at a time.</p>
                     </div>
                     <Link className={styles.btn} to="/my-work">View Full Experience →</Link>
                 </Reveal>
@@ -184,7 +191,7 @@ function Socials() {
                 <Reveal className={styles.socials}>
                     <span className={styles.eyebrow}>Connect</span>
                     <h2 className={styles.socialsTitle}>Let's talk</h2>
-                    <p className={styles.socialsSub}>DM me to connect — sport, building, or anything in between.</p>
+                    <p className={styles.socialsSub}>Reach out about finance, analytics, product, sport, or anything in between.</p>
                     <div className={styles.socialsLinks}>
                         <a href="https://instagram.com/blake.wello" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src={instagram} alt="Instagram" /></a>
                         <a href="https://www.linkedin.com/in/blake-wellington-4140a8117/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src={linkedIn} alt="LinkedIn" /></a>
