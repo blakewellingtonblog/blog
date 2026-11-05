@@ -16,7 +16,7 @@ const ROLES = [
         period: 'Dec 2022 – Present',
         title: 'Founder & Product Lead',
         org: '10k Athletics',
-        desc: 'Founded and run a sports-tech platform built around individual development plans. Secured $45K in funding, allocated the budget across design, engineering, and go-to-market, defined the KPIs we measured against, and shipped through a 50-user beta.',
+        desc: 'Founded and run a sports-tech platform built around individual development plans. Secured $45K in non-dilutive funding, built and managed the budget across design, engineering, and go-to-market, defined and tracked KPIs, and shipped through a 50-user beta.',
     },
     {
         period: 'Dec 2023 – Dec 2024',
@@ -38,10 +38,10 @@ const EDU = [
 ];
 
 const SKILLS = {
-    'Finance & Analysis': ['Financial Modeling', 'Excel', 'Budget Allocation', 'KPI Definition', 'Market Research', 'A/B Testing', 'SQL / PostgreSQL', 'Python'],
+    'Finance & Analysis': ['Financial Modeling', 'Financial Statement Analysis', 'Budgeting & Forecasting', 'Capital Allocation', 'Valuation Fundamentals', 'Variance Analysis', 'KPI Definition & Tracking', 'Data Analysis', 'Excel', 'SQL / PostgreSQL', 'Python'],
     Product: ['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Roadmapping', 'Go-to-Market'],
     Technical: ['React', 'React Native', 'TypeScript', 'FastAPI', 'REST APIs', 'Auth'],
-    Tools: ['Supabase', 'Figma', 'Notion', 'GitHub', 'Jira'],
+    Tools: ['Posthog', 'Supabase', 'Figma', 'Notion', 'GitHub', 'Jira'],
 };
 
 // scroll-reveal wrapper backed by the shared IntersectionObserver hook
@@ -99,7 +99,7 @@ function About() {
                         I'm a student-athlete at Regis University with a B.S. in Finance and a minor in Computer Science, now pursuing a master's degree in applied artificial intelligence. I'm drawn to work where careful analysis and real execution meet.
                     </p>
                     <p>
-                        For the past three years I've been the founder of <Link to="/my-work">10k Athletics</Link>, a platform that delivers individualized development plans for athletes and teams. Running it has meant owning the numbers as much as the product: securing $45K in funding and allocating it across design, engineering, and go-to-market, defining the KPIs we measured ourselves against, and turning user research into decisions about what to build and what to cut.
+                        For the past three years I've been the founder of <Link to="/my-work">10k Athletics</Link>, a platform that delivers individualized development plans for athletes and teams. Running it has meant owning the numbers as much as the product: securing $45K in non-dilutive funding, building and managing the budget across design, engineering, and go-to-market, defining and tracking the KPIs we measured ourselves against, and turning market research into decisions about what to build and what to cut.
                     </p>
                     <p>
                         I'm open about what comes next. That could be a financial analyst or FP&amp;A role where I can put my finance training and modeling skills to work, an analytics or operations seat, or a product team at an early-stage company. What matters most to me is working with people who take the problem seriously and want to get a little better at it every week.

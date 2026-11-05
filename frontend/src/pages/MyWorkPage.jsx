@@ -121,7 +121,7 @@ function MyWorkPage() {
                     <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Finance &amp; Analysis</h4>
                         <div className={styles.skillTags}>
-                            {['Financial Modeling', 'Excel', 'Budget Allocation', 'KPI Definition', 'Market Research', 'A/B Testing', 'SQL/PostgreSQL', 'Python'].map(s => (
+                            {['Financial Modeling', 'Financial Statement Analysis', 'Budgeting & Forecasting', 'Capital Allocation', 'Valuation Fundamentals', 'Variance Analysis', 'KPI Definition & Tracking', 'Market Research', 'Data Analysis', 'Business Reporting', 'Stakeholder Communication', 'Excel', 'SQL/PostgreSQL', 'Python'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
@@ -129,7 +129,7 @@ function MyWorkPage() {
                     <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Product</h4>
                         <div className={styles.skillTags}>
-                            {['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Feature Prioritization', 'Roadmapping', 'Agile/Scrum', 'Go-to-Market Strategy'].map(s => (
+                            {['Product Discovery', 'User Interviews', 'MVP Definition', 'PRDs', 'Feature Prioritization', 'Roadmapping', 'Agile/Scrum', 'Go-to-Market Strategy', 'A/B Testing'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
@@ -145,7 +145,7 @@ function MyWorkPage() {
                     <div className={styles.skillCategory}>
                         <h4 className={styles.skillLabel}>Tools</h4>
                         <div className={styles.skillTags}>
-                            {['Supabase', 'Figma', 'Notion', 'GitHub', 'GitLab', 'Jira'].map(s => (
+                            {['Posthog', 'Supabase', 'Figma', 'Notion', 'GitHub', 'GitLab', 'Jira'].map(s => (
                                 <span key={s} className={styles.skillChit}>{s}</span>
                             ))}
                         </div>
